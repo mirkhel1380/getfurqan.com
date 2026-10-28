@@ -24,7 +24,7 @@
     @media(max-width:760px){.shell{width:min(100% - 30px,560px)}.topbar{height:72px}.nav{gap:14px}.nav a:not(.button){display:none}.hero{grid-template-columns:1fr;padding:54px 0 52px;gap:30px}.art-card{min-height:275px}.book{transform:scale(.82) rotate(-7deg)}.art-card:before{width:300px;height:300px}.art-card:after{width:220px;height:220px}.intro{padding:40px 0 55px}.cards{grid-template-columns:1fr}.card{min-height:auto}.about-inner{grid-template-columns:1fr}.calligraphy{font-size:2rem}}@media(max-width:430px){.nav .button{padding:10px 13px;font-size:.83rem}.hero{padding-top:44px}.hero-copy{font-size:1rem}.art-card{min-height:245px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
-<link rel="stylesheet" href="/footer.css"></head>
+<link rel="stylesheet" href="/footer.css"><link rel="stylesheet" href="/hero-scene.css"></head>
 <body id="top">
   <header class="shell topbar">
     <a class="brand" href="/" aria-label="Al Furqan home"><span class="brand-mark" aria-hidden="true"><img src="/logo.svg" alt=""></span><span>Al Furqan</span></a>
@@ -34,12 +34,21 @@
     <section class="shell hero" aria-labelledby="hero-title">
       <div>
         <div class="eyebrow">Welcome to Al Furqan</div>
-        <h1>The Noble Quran, <em>close at hand.</em></h1>
+        <h1 id="hero-title">The Noble Quran, <em>close at hand.</em></h1>
         <p class="hero-copy">Al Furqan is a welcoming online project centered on the Noble Quran. Read the Quran in Uthmani, IndoPak and Tajweed scripts, with translations in 13 languages. More learning tools will follow.</p>
         <a class="button" href="#about">About Al Furqan <span aria-hidden="true">→</span></a>
         <div class="hero-note"><span aria-hidden="true">✦</span> We are building the website one step at a time.</div>
       </div>
-      <div class="art-card" aria-label="Illustration inspired by an open Quran"><div class="art-glow"></div><div class="book"><div class="book-label" lang="ar" dir="rtl">الفرقان</div></div><div class="art-caption"><span>AL FURQAN</span><span>READ · REFLECT</span></div></div>
+      <div class="art-card quran-scene" id="quran-scene" role="group" aria-label="Quran and moving prayer beads">
+ <div class="scene-ambient" aria-hidden="true"></div><div class="scene-arch" aria-hidden="true"></div>
+ <div class="scene-controls"><button type="button" id="scene-toggle" aria-label="Pause animation" aria-pressed="false" hidden><svg viewBox="0 0 12 12" aria-hidden="true"><path id="scene-toggle-icon" d="M2 1h3v10H2zM7 1h3v10H7z"/></svg></button></div>
+ <p class="scene-sr">A three-dimensional illustration of the Quran beside prayer beads. Each remembrance is displayed for 33 bead movements before the next begins: أستغفر الله، سبحان الله، الله أكبر، الحمد لله. This is an animated visual guide, not a record of your recitation.</p>
+ <div class="scene-remembrance" aria-hidden="true"><span class="scene-kicker">A MOMENT OF REMEMBRANCE</span><span id="scene-dhikr" class="scene-dhikr" lang="ar" dir="rtl">أستغفر الله</span><div class="scene-count"><span id="scene-count">1</span><span class="scene-count-divider">/</span><span>33</span></div><div class="scene-dots"><span class="active"></span><span></span><span></span><span></span></div></div>
+ <div class="scene-ground" aria-hidden="true"></div>
+ <div class="quran-object" aria-hidden="true"><div class="quran-float"><div class="quran-back"></div><div class="quran-pages"></div><div class="quran-spine"></div><div class="quran-ribbon"></div><div class="quran-cover"><svg class="cover-decoration" viewBox="0 0 148 198"><path d="M14 1H134Q134 14 147 14V184Q134 184 134 197H14Q14 184 1 184V14Q14 14 14 1Z"/><path d="M18 6H130Q130 18 142 18V180Q130 180 130 192H18Q18 180 6 180V18Q18 18 18 6Z"/><path d="M74 35 86 46 101 46 101 61 114 74 101 87 101 111 114 124 101 137 101 152 86 152 74 163 62 152 47 152 47 137 34 124 47 111 47 87 34 74 47 61 47 46 62 46Z"/><path d="M74 41 84 51H96V65L107 75 96 89V109L107 123 96 133V147H84L74 157 64 147H52V133L41 123 52 109V89L41 75 52 65V51H64Z"/><path d="M15 28 28 15M120 15 133 28M15 170 28 183M120 183 133 170M64 23H84M64 175H84"/><circle cx="74" cy="23" r="3"/><circle cx="74" cy="175" r="3"/></svg><div class="quran-cover-title" lang="ar" dir="rtl">القرآن<small>الكريم</small></div></div></div></div>
+ <svg class="tasbih-scene" viewBox="0 0 500 460" aria-hidden="true"><defs><radialGradient id="bead-jade" cx="30%" cy="24%" r="75%"><stop offset="0" stop-color="#a3c0a0"/><stop offset=".22" stop-color="#6b9475"/><stop offset=".58" stop-color="#345d44"/><stop offset=".85" stop-color="#143b2c"/><stop offset="1" stop-color="#08271e"/></radialGradient><radialGradient id="bead-gold" cx="30%" cy="24%" r="75%"><stop offset="0" stop-color="#fff0bb"/><stop offset=".3" stop-color="#d8b76c"/><stop offset=".7" stop-color="#9a7136"/><stop offset="1" stop-color="#4f3b20"/></radialGradient><filter id="bead-shadow" x="-80%" y="-80%" width="260%" height="260%"><feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#00190e" flood-opacity=".6"/></filter></defs><ellipse cx="360" cy="374" rx="62" ry="12" fill="#041d14" opacity=".2"/><path id="tasbih-path" class="tasbih-thread" d="M350 180 C418 181 461 263 420 323 C402 352 365 366 350 376 C329 364 298 342 294 306 C286 249 305 193 350 180 Z"/><g id="tasbih-beads" filter="url(#bead-shadow)"></g><g class="tasbih-knot"><path d="M350 375v15" stroke="#cdb274" stroke-width="2"/><ellipse cx="350" cy="385" rx="5" ry="10" fill="url(#bead-gold)"/><g class="tasbih-tassel"><path d="M350 392 343 421M350 392 347 425M350 392 352 426M350 392 357 423M350 392 360 419" fill="none" stroke="#c5a66b" stroke-width="1.5" stroke-linecap="round"/><path d="M344 394h12M344 398h12" stroke="#e6c77f" stroke-width="2"/></g></g></svg>
+ <div class="scene-caption" aria-hidden="true"><span>AL FURQAN</span><span>PAUSE · REMEMBER · REFLECT</span></div>
+</div>
     </section>
 
     <section class="shell intro" aria-labelledby="intro-title">
@@ -59,5 +68,6 @@
   </main>
   <footer class="site-footer"><div class="footer-grid"><div class="footer-intro"><a class="footer-logo" href="/"><img src="/logo.svg" alt="">Al Furqan</a><p>A welcoming place to read the Quran and explore its meanings, one passage at a time.</p><span class="footer-label">READ · UNDERSTAND · REFLECT</span></div><nav aria-label="Footer navigation"><h2>Explore</h2><a href="/">Home</a><a href="/reader.html">Read Quran</a><a href="/translations.html">Translations</a><a href="/listen.html">Listen & recite</a><a href="/study.html">Tafsir & word meanings</a><a href="/adhkar.html">Adhkar & duas</a><a href="/search.html">Search & study</a><a href="/progress.html">Reading progress</a><a href="/#about">About Al Furqan</a></nav><nav aria-label="Translation languages"><h2>Read in your language</h2><a href="/reader.html?chapter=1&translation=dari_badkhashani&view=verses" lang="prs">دری — بدخشانی</a><a href="/reader.html?chapter=1&translation=persian_ih&view=verses" lang="fa">فارسی — اسلام‌هاوس</a><a href="/reader.html?chapter=1&translation=english_saheeh&view=verses">English — Saheeh International</a><a href="/translations.html">All 13 languages →</a></nav><nav aria-label="Content sources"><h2>Our sources</h2><a href="https://quran.foundation/" target="_blank" rel="noopener">Quran.Foundation ↗</a><a href="https://quranenc.com/" target="_blank" rel="noopener">QuranEnc ↗</a><a href="/translations.html#sources">Text & translation information</a><p>Al Furqan is an independent project.</p></nav></div><div class="footer-bottom"><span>© Al Furqan</span><span>Bookmarks and reading preferences stay in your browser.</span><a href="#top">Back to top ↑</a></div></footer>
   
+<script src="/hero-scene.js"></script>
 </body>
 </html>
