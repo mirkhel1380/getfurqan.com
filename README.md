@@ -1,6 +1,6 @@
 # Al Furqan
 
-Buildless Quran website. Static assets are in `dist/`. Intended domain: getfurqan.com.
+Buildless Quran website. Static assets are in `dist/`. Custom domain requested: getfurqan.online (DNS validation pending).
 
 The reader supports surah, verse, juz and Madani page navigation; Uthmani, IndoPak and Tajweed rendering; Dari (Muhammad Anwar Badakhshani), Persian (IslamHouse) and English (Saheeh International) translations via QuranEnc; verse-by-verse recitation via the Quran.com API; local bookmarks, reading modes, size settings and light/dark themes.
 
