@@ -1,0 +1,218 @@
+{
+  "fetched": "2026-10-28",
+  "editions": {
+    "english_saheeh": {
+      "lang": "en",
+      "dir": "ltr",
+      "translator": "Noor International Center",
+      "version": "1.1.2",
+      "title": "English Translation - Noor International Center",
+      "description": "Issued by Noor International Center.",
+      "last_update": 1750772247,
+      "publisher": "Noor International Center"
+    },
+    "dari_badkhashani": {
+      "lang": "prs",
+      "dir": "rtl",
+      "translator": "Muhammad Anwar Badakhshani",
+      "publisher": "Muhammad Anwar Badakhshani",
+      "version": null
+    },
+    "persian_ih": {
+      "lang": "fa",
+      "dir": "rtl",
+      "translator": "Rowwad Translation Center",
+      "version": "1.1.3",
+      "title": "Persian Translation - Rowwad Translation Center",
+      "description": "Translated by the team of the Rowwad Translation Center, in cooperation with the Rabwah Dawah Association, the Islamic Content Service Association in Languages, and the IslamHouse.com website.",
+      "last_update": 1771883634,
+      "publisher": "Rowwad Translation Center / IslamHouse"
+    }
+  },
+  "verses": {
+    "13:28": {
+      "translations": {
+        "english_saheeh": {
+          "source": "https://quranenc.com/api/v1/translation/aya/english_saheeh/13/28",
+          "sha256": "b61ba3d2e2d5f17d58f14d2789c264ddb650ee7b89034095c8d398124cba1869",
+          "text": "Those who have believed and whose hearts are assured by the remembrance of Allāh. Unquestionably, by the remembrance of Allāh hearts are assured.\"",
+          "notes": ""
+        },
+        "dari_badkhashani": {
+          "source": "https://quranenc.com/api/v1/translation/aya/dari_badkhashani/13/28",
+          "sha256": "4cb753a2b41c1d2419c4602daf6faa3419e648df4fa2dbfcd7130aa790f2390c",
+          "text": "آنانی که ایمان آوردند و دل‌هایشان به یاد الله آرام می‌گیرد، آگاه باشید که دلها با یاد الله آرام می‌گیرند.",
+          "notes": null
+        },
+        "persian_ih": {
+          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/13/28",
+          "sha256": "35f2bd322d2d88fe7c5124c8e0967c493f23cb5c4eef7fe7c1b6782979b8d348",
+          "text": "[همان‌] کسانی که ایمان آورده‌اند و دل‌هایشان به یاد الله آرام می‌گیرد. آگاه باشید که تنها با یاد الله دل‌ها آرام می‌گیرد.",
+          "notes": ""
+        }
+      },
+      "arabic": "ٱلَّذِينَ ءَامَنُواْ وَتَطۡمَئِنُّ قُلُوبُهُم بِذِكۡرِ ٱللَّهِۗ أَلَا بِذِكۡرِ ٱللَّهِ تَطۡمَئِنُّ ٱلۡقُلُوبُ"
+    },
+    "2:153": {
+      "translations": {
+        "english_saheeh": {
+          "source": "https://quranenc.com/api/v1/translation/aya/english_saheeh/2/153",
+          "sha256": "acec19acbbd868288290fbeb7d046e24e1056dc2b75e28df154303532d3d9c21",
+          "text": "O you who have believed, seek help through patience and prayer. Indeed, Allāh is with the patient.",
+          "notes": ""
+        },
+        "dari_badkhashani": {
+          "source": "https://quranenc.com/api/v1/translation/aya/dari_badkhashani/2/153",
+          "sha256": "4337d7074472277341da794b303cbb515b136893011ad59111574fd502db757e",
+          "text": "ای کسانی که ایمان آورده‌اید، (در مشکلات و مصائب خود) به وسیلۀ صبر و نماز مدد جویید؛ که (رحمت و نصرت) الله با صابران است.",
+          "notes": null
+        },
+        "persian_ih": {
+          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/2/153",
+          "sha256": "578b7e3a0979d7834dbc22841c6a17a83e60a4e27e4bed2b6d0a6cc3766fe722",
+          "text": "ای کسانی که ایمان آورده‌اید، از شکیبایی و نماز یاری بجویید [که] بی‌تردید، الله با شکیبایان است.",
+          "notes": ""
+        }
+      },
+      "arabic": "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱسۡتَعِينُواْ بِٱلصَّبۡرِ وَٱلصَّلَوٰةِۚ إِنَّ ٱللَّهَ مَعَ ٱلصَّٰبِرِينَ"
+    },
+    "2:152": {
+      "translations": {
+        "english_saheeh": {
+          "source": "https://quranenc.com/api/v1/translation/aya/english_saheeh/2/152",
+          "sha256": "7968b768e530d48cff0c3e8ba09a26f25e06f8176435706641b48ea3613ded13",
+          "text": "So remember Me; I will remember you. And be grateful to Me and do not deny Me.",
+          "notes": ""
+        },
+        "dari_badkhashani": {
+          "source": "https://quranenc.com/api/v1/translation/aya/dari_badkhashani/2/152",
+          "sha256": "ebb16a6bbfc544135acb5356634bb3f9066ffd12edd1437d103a18a492b1c0fa",
+          "text": "پس شما مرا (به عبادت) یاد کنید، تا من شما را (به اجر و ثواب) یاد کنم، و شکر مرا را بجا آورید و (نعمت‌های) مرا کفران مکنید.",
+          "notes": null
+        },
+        "persian_ih": {
+          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/2/152",
+          "sha256": "a9973824291a1e8fbf479199b6c71f272aedfe24338d71e6e174ddff4069cbff",
+          "text": "پس مرا یاد کنید تا شما را یاد کنم و شکر مرا به جای آورید و از من ناسپاسی نکنید.",
+          "notes": ""
+        }
+      },
+      "arabic": "فَٱذۡكُرُونِيٓ أَذۡكُرۡكُمۡ وَٱشۡكُرُواْ لِي وَلَا تَكۡفُرُونِ"
+    },
+    "94:5": {
+      "translations": {
+        "english_saheeh": {
+          "source": "https://quranenc.com/api/v1/translation/aya/english_saheeh/94/5",
+          "sha256": "242a8655ebc422fc57c02d92caee9c882dd5be0fc3cddbb8a39c8911a47cd03e",
+          "text": "For indeed, with hardship [will be] ease [i.e., relief].",
+          "notes": ""
+        },
+        "dari_badkhashani": {
+          "source": "https://quranenc.com/api/v1/translation/aya/dari_badkhashani/94/5",
+          "sha256": "bacdc02e670bac2c5c3afa4eeef8dd182db584efe8a837bb88067cad62d25642",
+          "text": "پس یقیناً با هر سختی آسانی است.",
+          "notes": null
+        },
+        "persian_ih": {
+          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/94/5",
+          "sha256": "32b5d5a31f22059dcdfc041e012dfa9407e816a02e2c699dd27e06e9ef400c32",
+          "text": "مسلماً با [هر] دشواری، آسانی است.",
+          "notes": ""
+        }
+      },
+      "arabic": "فَإِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرًا"
+    },
+    "39:53": {
+      "translations": {
+        "english_saheeh": {
+          "source": "https://quranenc.com/api/v1/translation/aya/english_saheeh/39/53",
+          "sha256": "499e8f330839c74625bf0e088ee4617a588bde44a57095082ad80fedfb65f78a",
+          "text": "Say, \"O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allāh. Indeed, Allāh forgives all sins.[1354] Indeed, it is He who is the Forgiving, the Merciful.\"",
+          "notes": "[1354] For those who repent and correct themselves."
+        },
+        "dari_badkhashani": {
+          "source": "https://quranenc.com/api/v1/translation/aya/dari_badkhashani/39/53",
+          "sha256": "7349ea1cf39627a498c5ae8950bf7ae1e909b49578846e525fc7128b0532dfe4",
+          "text": "بگو: ای بندگانم که بر خود اسراف (و ظلم) کرده‌اید! از رحمت الله ناامید نشوید، یقینا که الله همۀ گناهان را می‌آمرزد، چرا که او بسیار آمرزگار و بسیار مهربان است.",
+          "notes": null
+        },
+        "persian_ih": {
+          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/39/53",
+          "sha256": "a9694344fb51fe707005ec060ac0e69a221da9d27ab54a621f07e90b31ffcd15",
+          "text": "[ای پیامبر،] به بندگانم که [در ارتکاب به شرک و گناه] زیاده‌روی کرده‌اند، بگو: «از رحمت الهی مأیوس نباشید؛ چرا که [اگر توبه کنید،] الله همۀ گناهانتان را می‌بخشد. به راستی که او تعالی بسیار آمرزنده و مهربان است.",
+          "notes": ""
+        }
+      },
+      "arabic": "۞ قُلۡ يَٰعِبَادِيَ ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ إِنَّهُۥ هُوَ ٱلۡغَفُورُ ٱلرَّحِيمُ"
+    },
+    "3:134": {
+      "translations": {
+        "english_saheeh": {
+          "source": "https://quranenc.com/api/v1/translation/aya/english_saheeh/3/134",
+          "sha256": "6f120a0eac36f3b3904a088e4f321ba79c83f6c91e92388721adaaca67c99eb5",
+          "text": "Who spend [in the cause of Allāh] during ease and hardship and who restrain anger and who pardon the people - and Allāh loves the doers of good;",
+          "notes": ""
+        },
+        "dari_badkhashani": {
+          "source": "https://quranenc.com/api/v1/translation/aya/dari_badkhashani/3/134",
+          "sha256": "43ff23d8bfc969f31dc1c06508ebdcc3a5f82c2df9ddd11574490d4b7eae927b",
+          "text": "آنان که مال‌هایشان را در حال ثروتمندی و تنگدستی (در راه الله) انفاق می‌کنند، و غضب خود را فرو می‌برند و از (اشتباهات) مردم می‌گذرند، و الله (اینچنین) خوبی کنندگان را دوست دارد.",
+          "notes": null
+        },
+        "persian_ih": {
+          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/3/134",
+          "sha256": "6c540be71d0e26282e2e6eb47aacb497e5123c98dce0ce309b9c26ed5d85e877",
+          "text": "آن کسانی ‌که در [هنگام] توانگری و تنگدستی انفاق می‌کنند و خشم خود را فرومی‌برند و از مردم درمی‌گذرند؛ و الله نیکوکاران را دوست دارد.",
+          "notes": ""
+        }
+      },
+      "arabic": "ٱلَّذِينَ يُنفِقُونَ فِي ٱلسَّرَّآءِ وَٱلضَّرَّآءِ وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ"
+    },
+    "17:9": {
+      "translations": {
+        "english_saheeh": {
+          "source": "https://quranenc.com/api/v1/translation/aya/english_saheeh/17/9",
+          "sha256": "966d3f5b2d17f94ca888a8e525fa9cc5405cc8aa85b8bde3c2d093f6eeec0a45",
+          "text": "Indeed, this Qur’ān guides to that which is most suitable and gives good tidings to the believers who do righteous deeds that they will have a great reward",
+          "notes": ""
+        },
+        "dari_badkhashani": {
+          "source": "https://quranenc.com/api/v1/translation/aya/dari_badkhashani/17/9",
+          "sha256": "f6b2bfd44338ce8141b4ea586152460bda66aa4b24197583064ed9f163fabc97",
+          "text": "همانا این قرآن به راهی هدایت می‌کند که آن پایدارتر است و به مؤمنانی که کارهای شایسته و پسندیده می‌کنند مژده می‌دهد که آنان پاداش بزرگ دارند.",
+          "notes": null
+        },
+        "persian_ih": {
+          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/17/9",
+          "sha256": "ba3b292778d734dc3a102a36fb63c876fd7d20a2b322118be7e5349f012c5e1f",
+          "text": "به راستی که این قرآن به استوارترین راه هدایت مى‌کند و به مؤمنانى كه كارهاى شایسته مى‌كنند مژده مى‌دهد كه پاداشى بزرگ برایشان [در پیش] است.",
+          "notes": ""
+        }
+      },
+      "arabic": "إِنَّ هَٰذَا ٱلۡقُرۡءَانَ يَهۡدِي لِلَّتِي هِيَ أَقۡوَمُ وَيُبَشِّرُ ٱلۡمُؤۡمِنِينَ ٱلَّذِينَ يَعۡمَلُونَ ٱلصَّٰلِحَٰتِ أَنَّ لَهُمۡ أَجۡرٗا كَبِيرٗا"
+    },
+    "49:13": {
+      "translations": {
+        "english_saheeh": {
+          "source": "https://quranenc.com/api/v1/translation/aya/english_saheeh/49/13",
+          "sha256": "2e5a713a4251f4e80aa9eedd397b627ff629d2884e300fe8cf5554508d6e55eb",
+          "text": "O mankind, indeed We have created you from male and female and made you peoples and tribes that you may know one another. Indeed, the most noble of you in the sight of Allāh is the most righteous[1521] of you. Indeed, Allāh is Knowing and Aware.",
+          "notes": "[1521] Literally, \"he who has the most taqwā,\" i.e., consciousness and fear of Allāh, piety and righteousness."
+        },
+        "dari_badkhashani": {
+          "source": "https://quranenc.com/api/v1/translation/aya/dari_badkhashani/49/13",
+          "sha256": "a0a55de5b5fa16b8879d36ff90fb1c1e70a666809a9a55635246172d75e2cc4f",
+          "text": "ای مردم! ما شما را از مرد و زن آفریدیم و شما را گروه‌ها و قبیله‌ها قرار دادیم تا یکدیگر را بشناسید. بی‌گمان گرامی‌ترین شما نزد الله باتقواترین شماست. همانا الله دانای باخبر است.",
+          "notes": null
+        },
+        "persian_ih": {
+          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/49/13",
+          "sha256": "4066cb43dd6beefc58cd7b58db746fbf40d5d337a9ba9fd01a571a7233eb9535",
+          "text": "ای مردم، ما شما را از [آمیزش] مرد و زنى آفریدیم و به تیره‌ها و قبیله‌های مختلف تقسیم كردیم تا یكدیگر را بازشناسید. بی‌تردید، بزرگوارترین شما نزد الله پرهیزگار‌ترینِ شماست؛ و الله [به آنچه می‌کنید] دانا و آگاه است.",
+          "notes": ""
+        }
+      },
+      "arabic": "يَٰٓأَيُّهَا ٱلنَّاسُ إِنَّا خَلَقۡنَٰكُم مِّن ذَكَرٖ وَأُنثَىٰ وَجَعَلۡنَٰكُمۡ شُعُوبٗا وَقَبَآئِلَ لِتَعَارَفُوٓاْۚ إِنَّ أَكۡرَمَكُمۡ عِندَ ٱللَّهِ أَتۡقَىٰكُمۡۚ إِنَّ ٱللَّهَ عَلِيمٌ خَبِيرٞ"
+    }
+  }
+}
