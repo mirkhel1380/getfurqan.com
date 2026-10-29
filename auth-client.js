@@ -1,6 +1,6 @@
 'use strict';
 window.AF=(()=>{
- const client=window.supabase?.createClient(AF_CONFIG.url,AF_CONFIG.key,{auth:{flowType:'pkce',detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});
+ const client=window.supabase?.createClient(AF_CONFIG.url,AF_CONFIG.key,{auth:{flowType:(location.pathname==='/auth-callback.html'&&new URLSearchParams(location.search).get('mode')==='invite')?'implicit':'pkce',detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});
  let pending;
  async function current(){
   if(!client)throw Error('Account service could not load. Reload and try again.');

@@ -1,1 +1,1 @@
-window.AF_CONFIG = Object.freeze({"url":"https://xtkdiziasltmgwqqnkfn.supabase.co","key":"sb_publishable_9nOAy4gwV9UgMoG9RWlqww_K6cuShwL","origin":"https://getfurqan.online","registrationReady":false});
+window.AF_CONFIG = Object.freeze({"url":"https://xtkdiziasltmgwqqnkfn.supabase.co","key":"sb_publishable_9nOAy4gwV9UgMoG9RWlqww_K6cuShwL","origin":"https://getfurqan.online","registrationReady":false,"recoveryReady":true});

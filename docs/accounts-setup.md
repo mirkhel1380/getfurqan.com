@@ -10,17 +10,21 @@ is shipped to the browser. `registrationReady` is deliberately false until email
 delivery and redirects have been configured and verified.
 
 The schema in `backend/schema.sql` has been applied to the remote project.
-No real user, administrator membership, or owner email has been seeded.
-Owner activation requires the user's explicit approval of the exact email.
-Do not infer approval from organization ownership or previous projects.
+The owner explicitly approved the exact email in the conversation. That email
+is reserved in the private allowlist, outside tracked source. Administrator
+membership is granted only after that email is verified. No account is treated
+as verified merely because an invitation was requested. Consult the Auth user
+record for the live invitation/verification state.
 
 ## Authentication settings to finish in Supabase
 
 1. Authentication → URL Configuration:
-   - Site URL: `https://getfurqan.online`
+   - Default Site URL: `https://getfurqan.online/auth-callback.html?mode=invite`
+     (the destination for the built-in administrative invitation template).
    - Redirect allowlist: `https://getfurqan.online/auth-callback.html`
-   - Also allow `https://getfurqan.online/auth-callback.html?mode=confirm`
-     and `https://getfurqan.online/auth-callback.html?mode=recovery`.
+   - Also allow `https://getfurqan.online/auth-callback.html?mode=confirm`,
+     `https://getfurqan.online/auth-callback.html?mode=recovery` and
+     `https://getfurqan.online/auth-callback.html?mode=invite`.
    - Do not use wildcard production domains or localhost fallbacks.
 2. Authentication → Email / SMTP:
    configure an authorized custom SMTP service or Send Email Hook for the
@@ -34,13 +38,15 @@ Do not infer approval from organization ownership or previous projects.
    same browser, sign-in, password recovery, and sign-out. PKCE links must be
    opened in the browser where signup or reset was requested.
 5. Only after the checks pass, change `registrationReady` to true and deploy.
-   Signup, resend and recovery buttons are intentionally paused until then.
+   Signup and signup-resend buttons remain paused. Password recovery is enabled
+   for the existing team-email account flow; default-mailer restrictions still
+   apply until custom SMTP is configured.
 
 Production email redirects always use the canonical GitHub Pages domain.
 A localhost or private Sites preview must not receive production auth callbacks.
 The native Sites project's owner-only access is separate from app accounts.
 
-## Activate the owner (only after exact email approval)
+## Activate the owner (exact email approval has been received)
 
 Do not put the real owner email in tracked source. In one server-side SQL
 transaction, add the approved lowercase email to `af_private.owner_emails`.
@@ -88,3 +94,19 @@ security finding was returned. Email delivery is still an outstanding live test.
 
 The Supabase JS SDK is pinned at 2.118.0 and vendored locally with its MIT license.
 Run `npm ci` followed by `npm run vendor:auth` to reproduce vendor assets.
+
+## Invitation callback
+
+The default invitation template cannot be customized on this free project
+without custom SMTP. Its default redirect is therefore the invitation callback
+on the canonical domain. Invite callbacks use the SDK's implicit flow, as
+required by server-created email invitations; signup/recovery retain PKCE.
+The callback validates the provider user and protected account RPC before
+showing password setup, removes callback fragments from history, and requires
+12–128 characters. The owner sets the password themselves.
+
+URL allowlist and minimum password length 12 were configured in the dashboard;
+email confirmation remains enabled. Public registration remains disabled in the
+UI pending custom SMTP. `scripts/check-auth-invite.mjs` validates callback
+success, missing/unverified sessions, mismatch rejection and URL cleanup with
+mock data; it never handles the owner's real password or email token.

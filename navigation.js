@@ -8,7 +8,7 @@
  document.getElementById('af-drawer-close').onclick=close;
  drawer.addEventListener('click',e=>{const r=drawer.getBoundingClientRect();if(e.target===drawer&&(e.clientX<r.left||e.clientY<r.top||e.clientY>r.bottom))close()});
  drawer.addEventListener('close',()=>{toggle.setAttribute('aria-expanded','false');document.body.classList.remove('af-menu-open');opener?.focus()});
- document.querySelectorAll('#site-navigation a').forEach(a=>{if(location.pathname===new URL(a.href).pathname||(location.pathname.startsWith('/topics/')&&new URL(a.href).pathname==='/topics.html'))a.setAttribute('aria-current','page')});
+ document.querySelectorAll('#site-navigation a').forEach(a=>{if(location.pathname===new URL(a.href).pathname||(location.pathname.startsWith('/topics/')&&new URL(a.href).pathname==='/topics.html')||((location.pathname.startsWith('/hadith/')||['/hadith.html','/hadith-book.html'].includes(location.pathname))&&new URL(a.href).pathname==='/hadiths.html'))a.setAttribute('aria-current','page')});
  const reduce=document.getElementById('af-reduce-motion');try{reduce.checked=localStorage.getItem('af-reduce-motion')==='true'}catch{};
  function motion(){document.documentElement.classList.toggle('af-reduce-motion',reduce.checked);if(reduce.checked){const pause=document.getElementById('scene-toggle');if(pause&&pause.getAttribute('aria-pressed')!=='true')pause.click()}}
  motion();reduce.onchange=()=>{try{localStorage.setItem('af-reduce-motion',String(reduce.checked))}catch{}motion()};
