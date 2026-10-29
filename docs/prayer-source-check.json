@@ -1,0 +1,28 @@
+{
+  "checked": "2026-10-29",
+  "provider": "AlAdhan v1",
+  "documentation": "https://aladhan.com/prayer-times-api",
+  "checks": [
+    {
+      "city": "Kabul",
+      "country": "AF",
+      "year": 2026,
+      "days": 365,
+      "timezone": "Asia/Kabul",
+      "source_sha256": "e222da06e49c0b7946516bf611f02efec891253513c6785df05e6b07eba82aef",
+      "january_dhuhr": "2026-01-01T11:57:00+04:30",
+      "july_dhuhr": "2026-07-01T11:57:00+04:30"
+    },
+    {
+      "city": "London",
+      "country": "GB",
+      "year": 2028,
+      "days": 366,
+      "timezone": "Europe/London",
+      "source_sha256": "5d5d113f13be5e45b874a393dfc7f85b65f318f99070548b677269c65337bd33",
+      "january_dhuhr": "2028-01-01T12:04:00+00:00",
+      "july_dhuhr": "2028-07-01T13:05:00+01:00"
+    }
+  ],
+  "kabul_january_1_daily_matches_annual": true
+}
