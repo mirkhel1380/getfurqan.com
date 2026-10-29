@@ -14,7 +14,7 @@ See `docs/hadith-library.md` for coverage and delivery limits.
 See `docs/topics-and-weekly.md` for sources and reproduction steps.
 
 Optional verified accounts and private user administration use a separate
-Supabase project. Public registration is paused pending custom email delivery configuration.
+Supabase project. Public email registration is enabled with Resend SMTP; new users must confirm their email before signing in.
 The owner email has been explicitly approved and reserved; invitation acceptance
 and email verification activate its administrator membership. See `docs/accounts-setup.md`.
 Bookmarks, notes and reading progress remain browser-local; sign-in does not

@@ -6,8 +6,9 @@ The new account pages use a separate Supabase project `xtkdiziasltmgwqqnkfn`.
 The Affimaro database and its users are not shared with this website.
 The public configuration is in `dist/auth-config.js` in the Sites source checkout
 (or `auth-config.js` at the root of the GitHub Pages mirror). Only the publishable key
-is shipped to the browser. `registrationReady` is deliberately false until email
-delivery and redirects have been configured and verified.
+is shipped to the browser. `registrationReady` and `recoveryReady` are true. Custom Resend SMTP was saved
+by the owner and verified enabled in the dashboard. New email accounts and
+mandatory email confirmation are enabled in Supabase.
 
 The schema in `backend/schema.sql` has been applied to the remote project.
 The owner explicitly approved the exact email in the conversation. That email
@@ -16,7 +17,7 @@ membership is granted only after that email is verified. No account is treated
 as verified merely because an invitation was requested. Consult the Auth user
 record for the live invitation/verification state.
 
-## Authentication settings to finish in Supabase
+## Authentication configuration
 
 1. Authentication → URL Configuration:
    - Default Site URL: `https://getfurqan.online/auth-callback.html?mode=invite`
@@ -27,20 +28,19 @@ record for the live invitation/verification state.
      `https://getfurqan.online/auth-callback.html?mode=invite`.
    - Do not use wildcard production domains or localhost fallbacks.
 2. Authentication → Email / SMTP:
-   configure an authorized custom SMTP service or Send Email Hook for the
-   domain. Supabase's built-in mailer sends only to project team addresses;
-   it is not sufficient for public registration.
-   Enter SMTP secrets in Supabase, never in the repository or public config.
+   Custom SMTP is enabled: `smtp.resend.com`, port 465, sender name Al Furqan,
+   sender `noreply@getfurqan.online`. The owner verified the domain in Resend
+   and entered the sending key directly in Supabase. Secrets remain encrypted
+   at the provider and are never stored in source or public configuration.
 3. Keep email confirmation enabled. Require a minimum password length of 12
    on the server, matching the signup form. Review email rate limits for the
    expected audience. If available for the plan, enable leaked password checks.
 4. Test signup with an address controlled by the owner, confirmation in the
    same browser, sign-in, password recovery, and sign-out. PKCE links must be
    opened in the browser where signup or reset was requested.
-5. Only after the checks pass, change `registrationReady` to true and deploy.
-   Signup and signup-resend buttons remain paused. Password recovery is enabled
-   for the existing team-email account flow; default-mailer restrictions still
-   apply until custom SMTP is configured.
+5. `registrationReady` is true. Signup, confirmation resend, sign-in and
+   password recovery are available. Retain email confirmation and server-side
+   profile/admin checks. Never infer administrator access from signup metadata.
 
 Production email redirects always use the canonical GitHub Pages domain.
 A localhost or private Sites preview must not receive production auth callbacks.
@@ -90,31 +90,34 @@ emails and leaves no test users or administrator memberships behind.
 Supabase's security advisor reports only three informational no-policy notices
 for private tables. These tables intentionally have no direct user grants and
 are inaccessible except through the checked functions. A later advisor check also reports leaked-password protection disabled; enable
-that optional protection when supported by the project plan. Public email
-delivery is still an outstanding live test.
+that optional protection when supported by the project plan. With custom SMTP
+enabled, an owner recovery email was accepted by the email service. This checks
+SMTP delivery submission, not inbox receipt. Completing a new-account signup
+and confirmation still requires a user to enter their own password and open
+the confirmation email; no test user password or email token is handled here.
 
 The Supabase JS SDK is pinned at 2.118.0 and vendored locally with its MIT license.
 Run `npm ci` followed by `npm run vendor:auth` to reproduce vendor assets.
 
 ## Invitation callback
 
-The default invitation template cannot be customized on this free project
-without custom SMTP. Its default redirect is therefore the invitation callback
-on the canonical domain. Invite callbacks use the SDK's implicit flow, as
+The default Site URL remains the invitation callback on the canonical domain.
+Normal signup and recovery requests supply their explicit allowlisted callback.
+Custom SMTP is now configured; invitation behavior is retained. Invite callbacks use the SDK's implicit flow, as
 required by server-created email invitations; signup/recovery retain PKCE.
 The callback validates the provider user and protected account RPC before
 showing password setup, removes callback fragments from history, and requires
 12–128 characters. The owner sets the password themselves.
 
 URL allowlist and minimum password length 12 were configured in the dashboard;
-email confirmation remains enabled. Public registration remains disabled in the
-UI pending custom SMTP. `scripts/check-auth-invite.mjs` validates callback
+email confirmation remains enabled. Public registration is enabled in the UI
+following SMTP setup and an accepted recovery-email send. `scripts/check-auth-invite.mjs` validates callback
 success, missing/unverified sessions, mismatch rejection and URL cleanup with
 mock data; it never handles the owner's real password or email token.
 
 ## Signup availability and request states
 
-Public registration is still gated on custom email delivery. When unavailable,
+Public registration is enabled. The availability gate remains for outages: when disabled,
 the signup form is hidden before visitors enter personal details, and a short
 unavailability message is displayed. Sign-in and existing-account recovery
 remain available. The waiting cursor is used only for an active request.
