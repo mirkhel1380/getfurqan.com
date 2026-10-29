@@ -1,6 +1,6 @@
 # Website language
 
-The header globe and footer now set the interface language in place. They no longer link to Al-Fatihah or the translations page. English, Dari and Pashto remain the first choices; Other languages expands the remaining choices without navigation. All 35 HTML pages load the same controller and locale styles. The globe is available on small screens, too.
+The header globe sets the interface language in place. The footer language section was removed at the owner’s request. Language controls no longer link to Al-Fatihah or the translations page. English, Dari and Pashto remain the first choices; Other languages expands the remaining choices without navigation. All 39 HTML pages load the same controller and locale styles. The globe is available on small screens, too.
 
 `af-site-language` stores the interface language in this browser. It is independent of Quran translation, tafsir edition, reciter, passage, reading progress and account state. No URL or passage change is performed. Other open tabs update through the storage event. A failed or invalid language pack leaves the previous language active.
 
