@@ -1,8 +1,8 @@
 'use strict';
-// Interface localization only. Published scripture, translations and tafsir are never rewritten.
+// Interface and editorial topic localization. Published scripture, translations and tafsir are never rewritten.
 window.AFI18n=(()=>{
  const languages=[['en','English','ltr'],['prs','دری','rtl'],['ps','پښتو','rtl'],['fa','فارسی','rtl'],['de','Deutsch','ltr'],['nl','Nederlands','ltr'],['fr','Français','ltr'],['it','Italiano','ltr'],['ur','اردو','rtl'],['tr','Türkçe','ltr'],['es','Español','ltr'],['pt','Português','ltr'],['id','Bahasa Indonesia','ltr']];
- const storageKey='af-site-language',version='20261029-prayer1',cache=new Map(),originals=new WeakMap(),attributes=new WeakMap();
+ const storageKey='af-site-language',version='20261029-topics1',cache=new Map(),originals=new WeakMap(),attributes=new WeakMap();
  const protectedSelector='script,style,svg,textarea,input,option,optgroup,[data-i18n-ignore],.arabic,.translation,.translation-note,.quran-meaning,.word-arabic,.word-meaning,.block-text,.dhikr-arabic,.hadith-entry-excerpt,#weekly-arabic,#weekly-translation,#weekly-notes-text,#reader-arabic,#reader-translation,#reader-grades,#reader-book-name,#book-page-title,#weekly-credit,#weekly-source-info,#translation-source,[data-book-row] strong,[data-book-row] .hadith-book-name,.book-row,#users-body strong,#audit-list,.contact-user-content,#profile-email,#status-target';
  const sourceSelects='#translation,#tafsir-language,#word-language,#dua-translation,#reader-language,#book-language,#chapter,#surah,#reciter,#search-language';
  const aliases={'About your data':'Privacy & your data','Learn about your data':'Privacy & your data','Tafsir & word meanings':'Tafsir & words','Tafsir and word meanings':'Tafsir & words','Listen and recite':'Listen & recite','Adhkar and duas':'Adhkar & duas','Explore adhkar & duas':'Adhkar & duas','Search and study':'Search & study','THE HADITH LIBRARY':'Hadith library','Translator’s notes':'Translator notes','Your reading today':'Verses today','Your Al Furqan':'Your Al Furqan account','Your Al Furqan account':'Your Al Furqan account','Tafsir & word meanings · Al Furqan':'Tafsir & words · Al Furqan'};
@@ -12,6 +12,7 @@ window.AFI18n=(()=>{
  function translate(text){
   if(current==='en'||!text)return text;
   const value=normalize(text);let mapped=lookup.get(value.toLowerCase())||lookup.get((aliases[value]||'').toLowerCase());if(mapped)return text.match(/^\s*/)[0]+mapped+text.match(/\s*$/)[0];
+  const quranReference=value.match(/^Quran (\d{1,3}:\d{1,3})$/);if(quranReference)return translate('Quran')+' '+quranReference[1];
   // Keep arrows, numbered section prefixes and counters outside the translated message.
   const symbol=value.match(/^([←→↗↑▶■★☆✓ⓘ]\s*)?(.*?)(\s*[←→↗↑+])?$/u);
   if(symbol&&(symbol[1]||symbol[3])){const middle=translate(symbol[2]);if(middle!==symbol[2])return (symbol[1]||'')+middle+(symbol[3]||'');}
