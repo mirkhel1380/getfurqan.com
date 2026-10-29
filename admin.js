@@ -13,5 +13,5 @@
  }catch(e){AF.notify(status,AF.message(e),true);$('admin-content').hidden=true}finally{busy(false);$('admin-prev').disabled=page<=1;$('admin-next').disabled=page*25>=total}}
  $('admin-search').onsubmit=e=>{e.preventDefault();if(loading)return;query=$('admin-query').value.trim();page=1;load()};$('admin-refresh').onclick=load;$('admin-prev').onclick=()=>{if(page>1&&!loading){page--;load()}};$('admin-next').onclick=()=>{if(page*25<total&&!loading){page++;load()}};$('status-cancel').onclick=()=>dialog.close();
  $('status-form').onsubmit=async e=>{e.preventDefault();if(!target)return;$('status-save').disabled=true;$('status-cancel').disabled=true;try{await AF.rpc('af_admin_status',{p_user:target.id,p_status:target.status==='active'?'suspended':'active',p_reason:$('status-reason').value.trim()});dialog.close();target=null;await load()}catch(err){AF.notify($('status-dialog-error'),AF.message(err),true)}finally{$('status-save').disabled=false;$('status-cancel').disabled=false}};
- try{const me=await AF.requireAccount(true);if(me)await load()}catch(e){AF.notify(status,AF.message(e),true)}
+ try{const me=await AF.requireAccount(true);if(me){await load();window.AFContactInbox?.start();}}catch(e){AF.notify(status,AF.message(e),true)}
 })();

@@ -1,0 +1,40 @@
+-- Synthetic fixtures only. No mail is sent; all data is rolled back.
+begin;
+do $$
+declare msg uuid:=gen_random_uuid();a uuid:=gen_random_uuid();u uuid:=gen_random_uuid();sa uuid:=gen_random_uuid();su uuid:=gen_random_uuid();r jsonb;e text:='contact-test-'||gen_random_uuid()||'@example.invalid';before_count bigint;
+begin
+ select count(*) into before_count from af_contact.messages;
+ perform set_config('request.jwt.claims','{"role":"anon"}',true);
+ execute 'set local role anon';
+ r:=public.af_contact_submit(msg,'Synthetic reader',e,'Website feedback','A synthetic message for the transaction test.','prs','');
+ if r->>'ok'<>'true' or r->>'reference'<>msg::text then raise exception 'FAIL: submission receipt';end if;
+ perform public.af_contact_submit(msg,'Synthetic reader',e,'Website feedback','A synthetic message for the transaction test.','prs','');
+ begin perform public.af_contact_inbox();raise exception 'FAIL: anonymous inbox access';exception when insufficient_privilege then null;end;
+ begin perform public.af_contact_mark(msg,true);raise exception 'FAIL: anonymous mark';exception when insufficient_privilege then null;end;
+ begin perform count(*) from af_contact.messages;raise exception 'FAIL: direct table read';exception when insufficient_privilege then null;end;
+ begin perform public.af_contact_submit(gen_random_uuid(),'Test','invalid','Hello','Long enough message for validation.','en','');raise exception 'FAIL: invalid email accepted';exception when invalid_parameter_value then null;end;
+ begin perform public.af_contact_submit(gen_random_uuid(),'Test',e,'Hi','Short','en','');raise exception 'FAIL: short fields accepted';exception when invalid_parameter_value then null;end;
+ begin perform public.af_contact_submit(gen_random_uuid(),'Test',e,'Hello','Long enough message for validation.','en','bot');raise exception 'FAIL: honeypot accepted';exception when invalid_parameter_value then null;end;
+ perform public.af_contact_submit(gen_random_uuid(),'Test',e,'Hello','Second message for the test.','en','');
+ perform public.af_contact_submit(gen_random_uuid(),'Test',e,'Hello','Third message for the test.','en','');
+ begin perform public.af_contact_submit(gen_random_uuid(),'Test',e,'Hello','Fourth message for the test.','en','');raise exception 'FAIL: rate limit bypass';exception when raise_exception then if sqlerrm like 'FAIL:%' then raise;end if;if sqlerrm not like 'Too many messages%' then raise;end if;end;
+ execute 'reset role';
+ if (select count(*) from af_contact.messages)<>before_count+3 then raise exception 'FAIL: duplicate submission stored';end if;
+ insert into auth.users(id,email,email_confirmed_at,raw_user_meta_data) values(a,'contact-admin-'||a||'@example.invalid',now(),'{}'),(u,'contact-user-'||u||'@example.invalid',now(),'{"is_admin":true}');
+ insert into auth.sessions(id,user_id) values(sa,a),(su,u);insert into af_private.admins(user_id) values(a);
+ perform set_config('request.jwt.claims',jsonb_build_object('sub',u,'role','authenticated','session_id',su)::text,true);
+ execute 'set local role authenticated';
+ begin perform public.af_contact_inbox();raise exception 'FAIL: regular user inbox access';exception when insufficient_privilege then null;end;
+ begin perform public.af_contact_mark(msg,true);raise exception 'FAIL: regular user mark';exception when insufficient_privilege then null;end;
+ perform set_config('request.jwt.claims',jsonb_build_object('sub',a,'role','authenticated','session_id',sa)::text,true);
+ r:=public.af_contact_inbox();if (r->>'total')::int<>before_count+3 then raise exception 'FAIL: admin inbox';end if;
+ perform public.af_contact_mark(msg,true);
+ execute 'reset role';
+ if not exists(select 1 from af_contact.messages where id=msg and status='read' and read_by=a and read_at is not null) then raise exception 'FAIL: read state';end if;
+ delete from auth.sessions where id=sa;
+ execute 'set local role authenticated';
+ begin perform public.af_contact_inbox();raise exception 'FAIL: revoked admin session access';exception when invalid_authorization_specification then null;end;
+ execute 'reset role';
+end;$$;
+select 'PASS: anonymous submission, idempotency, input validation, rate limit, private data, regular-user denial, live administrator inbox/read state, revoked-session denial' as checks;
+rollback;
