@@ -124,3 +124,22 @@ remain available. The waiting cursor is used only for an active request.
 Network fetches abort after 30 seconds; login form operations stop waiting after
 35 seconds, restore the controls, and display an actionable error. Account
 assets use a versioned URL so older paused-registration scripts are refreshed.
+
+## Expired confirmation links and resend
+
+Successful signup now advances to the confirmation resend form, retaining only
+the email and next allowed send time in session storage. No password or token
+is stored there. A 60-second per-address countdown prevents accidental repeated
+requests; backend-provided wait times are honored and project email limits are
+reported separately. A failed send does not claim success or remain busy.
+
+Resend calls the documented `auth.resend({type: 'signup', ...})` endpoint with
+the canonical confirmation redirect. The pinned SDK creates a fresh PKCE flow
+for each request. Users must open the newest email in the requesting browser.
+An expired confirmation callback links directly to `/login.html?mode=resend`;
+an unconfirmed-email sign-in also offers this form. Already verified addresses
+are directed to sign in; the UI does not promise another confirmation for them.
+
+Form tests cover two successive resends after simulated expiry/wait, the correct
+endpoint and redirect, persisted cooldown, rate-limited retries, quota errors,
+unconfirmed sign-in, request timeouts and expired-callback navigation.

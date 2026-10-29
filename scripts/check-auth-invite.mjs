@@ -12,3 +12,7 @@ for(const mode of ['invite','recovery']){const x=await check(mode);assert.equal(
 for(const opts of [{session:false},{gate:false}]){const x=await check('invite',opts);assert.equal(x.get('reset-form').hidden,true);assert.equal(x.get('callback-link').hidden,false);assert.ok(x.cleaned()>0);await x.get('reset-form').onsubmit({preventDefault(){},target:x.get('reset-form')});assert.equal(x.updated(),0)}
 const confirmed=await check('confirm');assert.equal(confirmed.get('reset-form').hidden,true);assert.equal(confirmed.get('callback-link').href,'/account.html');
 console.log('PASS: verified invite/recovery setup, confirmation-only flow, expired/unverified denial, password mismatch rejection, no updates without verified session, callback URL cleanup.');
+
+const expiredConfirmation=await check('confirm',{session:false});assert.equal(expiredConfirmation.get('callback-link').href,'/login.html?mode=resend');assert.match(expiredConfirmation.get('callback-link').textContent,/new confirmation/);
+const expiredRecovery=await check('recovery',{session:false});assert.equal(expiredRecovery.get('callback-link').href,'/login.html?mode=recovery');
+console.log('PASS: expired confirmation and recovery links lead to the matching resend form.');
