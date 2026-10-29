@@ -18,15 +18,16 @@
       "publisher": "Muhammad Anwar Badakhshani",
       "version": null
     },
-    "persian_ih": {
-      "lang": "fa",
+    "pashto_rwwad": {
+      "lang": "ps",
       "dir": "rtl",
       "translator": "Rowwad Translation Center",
-      "version": "1.1.3",
-      "title": "Persian Translation - Rowwad Translation Center",
+      "publisher": "Rowwad Translation Center",
+      "fetched": "2026-10-29",
+      "version": "1.0.1",
+      "title": "Pashto Translation - Rowwad Translation Center",
       "description": "Translated by the team of the Rowwad Translation Center, in cooperation with the Rabwah Dawah Association, the Islamic Content Service Association in Languages, and the IslamHouse.com website.",
-      "last_update": 1771883634,
-      "publisher": "Rowwad Translation Center / IslamHouse"
+      "last_update": 1707999381
     }
   },
   "verses": {
@@ -44,10 +45,10 @@
           "text": "آنانی که ایمان آوردند و دل‌هایشان به یاد الله آرام می‌گیرد، آگاه باشید که دلها با یاد الله آرام می‌گیرند.",
           "notes": null
         },
-        "persian_ih": {
-          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/13/28",
-          "sha256": "35f2bd322d2d88fe7c5124c8e0967c493f23cb5c4eef7fe7c1b6782979b8d348",
-          "text": "[همان‌] کسانی که ایمان آورده‌اند و دل‌هایشان به یاد الله آرام می‌گیرد. آگاه باشید که تنها با یاد الله دل‌ها آرام می‌گیرد.",
+        "pashto_rwwad": {
+          "source": "https://quranenc.com/api/v1/translation/aya/pashto_rwwad/13/28",
+          "sha256": "b8a30aed1f6105e7ca3c02304d17af0d5786fcecdc3b7ee7e1ca8d342abb98c4",
+          "text": "هغوى چې ايمان راوړى او د الله په يادولو يې زړونه ډاډه شوي خبردار اوسئ چې زړونه خو د الله په ياد ډاډه كيږي.",
           "notes": ""
         }
       },
@@ -67,10 +68,10 @@
           "text": "ای کسانی که ایمان آورده‌اید، (در مشکلات و مصائب خود) به وسیلۀ صبر و نماز مدد جویید؛ که (رحمت و نصرت) الله با صابران است.",
           "notes": null
         },
-        "persian_ih": {
-          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/2/153",
-          "sha256": "578b7e3a0979d7834dbc22841c6a17a83e60a4e27e4bed2b6d0a6cc3766fe722",
-          "text": "ای کسانی که ایمان آورده‌اید، از شکیبایی و نماز یاری بجویید [که] بی‌تردید، الله با شکیبایان است.",
+        "pashto_rwwad": {
+          "source": "https://quranenc.com/api/v1/translation/aya/pashto_rwwad/2/153",
+          "sha256": "94b45d44f0328e1c7dcce2cf1307774a12d154d4cf96e065feab554b0aaa8501",
+          "text": "ای هغو کسانو چې ایمان مو راوړی دی! په صبر او لمانځه سره له (الله) څخه مرسته وغواړئ، بېشکه الله له صبر کوونکو سره دی.",
           "notes": ""
         }
       },
@@ -90,10 +91,10 @@
           "text": "پس شما مرا (به عبادت) یاد کنید، تا من شما را (به اجر و ثواب) یاد کنم، و شکر مرا را بجا آورید و (نعمت‌های) مرا کفران مکنید.",
           "notes": null
         },
-        "persian_ih": {
-          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/2/152",
-          "sha256": "a9973824291a1e8fbf479199b6c71f272aedfe24338d71e6e174ddff4069cbff",
-          "text": "پس مرا یاد کنید تا شما را یاد کنم و شکر مرا به جای آورید و از من ناسپاسی نکنید.",
+        "pashto_rwwad": {
+          "source": "https://quranenc.com/api/v1/translation/aya/pashto_rwwad/2/152",
+          "sha256": "fa444d5ddd86a32d3d8d24ed090abaf932f3c63a682ba0ffef2c9b268e8d3bdf",
+          "text": "پس تاسې ما یاد کړئ زه به هم تاسې یاد کړم او زما شکر وباسئ او ناشکري مه کوئ.",
           "notes": ""
         }
       },
@@ -113,10 +114,10 @@
           "text": "پس یقیناً با هر سختی آسانی است.",
           "notes": null
         },
-        "persian_ih": {
-          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/94/5",
-          "sha256": "32b5d5a31f22059dcdfc041e012dfa9407e816a02e2c699dd27e06e9ef400c32",
-          "text": "مسلماً با [هر] دشواری، آسانی است.",
+        "pashto_rwwad": {
+          "source": "https://quranenc.com/api/v1/translation/aya/pashto_rwwad/94/5",
+          "sha256": "f9f230aaa707bf579f9d6a292e91533edfa6769d7bfe27c51108a5e6604d544b",
+          "text": "نو بېشکه له سختۍ سره آسانتيا هم شته.",
           "notes": ""
         }
       },
@@ -136,10 +137,10 @@
           "text": "بگو: ای بندگانم که بر خود اسراف (و ظلم) کرده‌اید! از رحمت الله ناامید نشوید، یقینا که الله همۀ گناهان را می‌آمرزد، چرا که او بسیار آمرزگار و بسیار مهربان است.",
           "notes": null
         },
-        "persian_ih": {
-          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/39/53",
-          "sha256": "a9694344fb51fe707005ec060ac0e69a221da9d27ab54a621f07e90b31ffcd15",
-          "text": "[ای پیامبر،] به بندگانم که [در ارتکاب به شرک و گناه] زیاده‌روی کرده‌اند، بگو: «از رحمت الهی مأیوس نباشید؛ چرا که [اگر توبه کنید،] الله همۀ گناهانتان را می‌بخشد. به راستی که او تعالی بسیار آمرزنده و مهربان است.",
+        "pashto_rwwad": {
+          "source": "https://quranenc.com/api/v1/translation/aya/pashto_rwwad/39/53",
+          "sha256": "4afce7aa101b8b92c3fb878a5a54dbbcc39bf0d6f2b7f66ee85e2853fb5ec203",
+          "text": "ته ورته ووايه: ای زما هغو بندګانو چې پر ځانو يې ظلم كړى د الله له رحمته مه ناهيلي كيږئ، يقيناً الله ټول ګناهونه بخښي بېشكه همغه ډېر بخښونكى مهربان دى.",
           "notes": ""
         }
       },
@@ -159,10 +160,10 @@
           "text": "آنان که مال‌هایشان را در حال ثروتمندی و تنگدستی (در راه الله) انفاق می‌کنند، و غضب خود را فرو می‌برند و از (اشتباهات) مردم می‌گذرند، و الله (اینچنین) خوبی کنندگان را دوست دارد.",
           "notes": null
         },
-        "persian_ih": {
-          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/3/134",
-          "sha256": "6c540be71d0e26282e2e6eb47aacb497e5123c98dce0ce309b9c26ed5d85e877",
-          "text": "آن کسانی ‌که در [هنگام] توانگری و تنگدستی انفاق می‌کنند و خشم خود را فرومی‌برند و از مردم درمی‌گذرند؛ و الله نیکوکاران را دوست دارد.",
+        "pashto_rwwad": {
+          "source": "https://quranenc.com/api/v1/translation/aya/pashto_rwwad/3/134",
+          "sha256": "31f97e0195aa57393f96458dafce545e3b6be40e58a34b557c0e1009d9ca6631",
+          "text": "هغوى چې په پراخۍ او تنګستیا كې لګښت كوي او غوسه زغمونكي او له (بدۍ د) خلكو تېرېدونكي او الله (داسې) نېكان خوښوي.",
           "notes": ""
         }
       },
@@ -182,10 +183,10 @@
           "text": "همانا این قرآن به راهی هدایت می‌کند که آن پایدارتر است و به مؤمنانی که کارهای شایسته و پسندیده می‌کنند مژده می‌دهد که آنان پاداش بزرگ دارند.",
           "notes": null
         },
-        "persian_ih": {
-          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/17/9",
-          "sha256": "ba3b292778d734dc3a102a36fb63c876fd7d20a2b322118be7e5349f012c5e1f",
-          "text": "به راستی که این قرآن به استوارترین راه هدایت مى‌کند و به مؤمنانى كه كارهاى شایسته مى‌كنند مژده مى‌دهد كه پاداشى بزرگ برایشان [در پیش] است.",
+        "pashto_rwwad": {
+          "source": "https://quranenc.com/api/v1/translation/aya/pashto_rwwad/17/9",
+          "sha256": "7557059c5eab3397b63b8f28626130e0b2b87c132003d62d23aa9d1175fe367a",
+          "text": "يقيناً دا قرآن هغې لارې ته ښوونه كوي چې سمه سيده ده، او هغو مومنانو ته چې سم كارونه كوي دا زېرى وركوي چې بې شكه د دوى لپاره لويه بدله ده.",
           "notes": ""
         }
       },
@@ -205,10 +206,10 @@
           "text": "ای مردم! ما شما را از مرد و زن آفریدیم و شما را گروه‌ها و قبیله‌ها قرار دادیم تا یکدیگر را بشناسید. بی‌گمان گرامی‌ترین شما نزد الله باتقواترین شماست. همانا الله دانای باخبر است.",
           "notes": null
         },
-        "persian_ih": {
-          "source": "https://quranenc.com/api/v1/translation/aya/persian_ih/49/13",
-          "sha256": "4066cb43dd6beefc58cd7b58db746fbf40d5d337a9ba9fd01a571a7233eb9535",
-          "text": "ای مردم، ما شما را از [آمیزش] مرد و زنى آفریدیم و به تیره‌ها و قبیله‌های مختلف تقسیم كردیم تا یكدیگر را بازشناسید. بی‌تردید، بزرگوارترین شما نزد الله پرهیزگار‌ترینِ شماست؛ و الله [به آنچه می‌کنید] دانا و آگاه است.",
+        "pashto_rwwad": {
+          "source": "https://quranenc.com/api/v1/translation/aya/pashto_rwwad/49/13",
+          "sha256": "6110c0503ef325e03cba1100ad4a155af38e8464d3c81cadf01d49e66d909976",
+          "text": "اې خلکو! موږ تاسي (ټول) له يو نارينه او ښځې پيدا كړي ياست، او د دې لپاره مو خېلونه او قبيلې وګرځولئ چې سره وپېژنئ، (كنه) بېشکه د الله پر وړاندې ستاسي ډېر عزتمن هغه دى چې ډېر تقوى لرونكى وي، بېشكه الله ښه پوه خبردار دى.",
           "notes": ""
         }
       },

@@ -3,7 +3,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import urllib.request,json,hashlib,datetime
 refs=['13:28','2:153','2:152','94:5','39:53','3:134','17:9','49:13']
-editions={'english_saheeh':('en','ltr','Noor International Center'),'dari_badkhashani':('prs','rtl','Muhammad Anwar Badakhshani'),'persian_ih':('fa','rtl','Rowwad Translation Center')}
+editions={'english_saheeh':('en','ltr','Noor International Center'),'dari_badkhashani':('prs','rtl','Muhammad Anwar Badakhshani'),'pashto_rwwad':('ps','rtl','Rowwad Translation Center')}
 def fetch(job):
  ref,key=job;c,v=ref.split(':');url=f'https://quranenc.com/api/v1/translation/aya/{key}/{c}/{v}'
  raw=urllib.request.urlopen(url,timeout=45).read();d=json.loads(raw)['result']

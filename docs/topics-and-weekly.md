@@ -7,13 +7,13 @@ selection repeats; it does not generate verses or religious prescriptions.
 Without JavaScript, the initial passage is labelled a featured verse rather
 than incorrectly claiming it is the current week's selection.
 
-Arabic, English, Dari and Persian source strings are copied unchanged from
+Arabic, English, Dari and Pashto source strings are copied unchanged from
 QuranEnc's published single-ayah API. The three Arabic copies for each reference
 were checked for exact equality. Original translator notes are preserved, with
 safe semantic rendering. The component names the publisher and source, displays
 available edition versions, and records raw-response hashes and fetch date in
 `dist/content/weekly-verses.json`. QuranEnc's current metadata list supplies
-English v1.1.2 and Persian v1.1.3. It does not list a version for the Dari edition;
+English v1.1.2 and Pashto v1.0.1. It does not list a version for the Dari edition;
 the source details say so, without inventing a version number. The Dari edition
 and translator are confirmed on the publisher's old-design browse page.
 
@@ -32,6 +32,8 @@ An attempted automated comparison with the Quran.com Uthmani API returned HTTP
 `scripts/check-weekly-sources.py` can perform that base-letter comparison where
 API access is available; it never changes the displayed Arabic. Full specialist
 proofreading of Quran display/diacritics remains outside this implementation.
+
+On 2026-10-29, the weekly Persian option was replaced with Pashto (`pashto_rwwad`, Rowwad Translation Center v1.0.1). All eight Pashto single-ayah responses were checked against the existing Arabic strings for exact equality. Published text and footnotes are copied unchanged; original English/Dari snapshots and the weekly schedule are preserved. The Pashto edition records its own fetch date. Weekly choices remain English, Dari, Pashto. Saved Persian weekly preferences fall back to English. The Quran reader and the rest of the site retain their language options.
 
 ## Topics
 
