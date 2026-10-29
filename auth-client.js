@@ -1,6 +1,7 @@
 'use strict';
 window.AF=(()=>{
- const client=window.supabase?.createClient(AF_CONFIG.url,AF_CONFIG.key,{auth:{flowType:(location.pathname==='/auth-callback.html'&&new URLSearchParams(location.search).get('mode')==='invite')?'implicit':'pkce',detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});
+ async function timedFetch(input,options={}){const controller=new AbortController(),original=options.signal;let timedOut=false;const cancel=()=>controller.abort(original.reason);if(original?.aborted)cancel();else original?.addEventListener('abort',cancel,{once:true});const timer=setTimeout(()=>{timedOut=true;controller.abort()},30000);try{return await fetch(input,{...options,signal:controller.signal})}catch(error){if(timedOut)throw Error('The request took too long. Check your connection and try again.');throw error}finally{clearTimeout(timer);original?.removeEventListener('abort',cancel)}}
+ const client=window.supabase?.createClient(AF_CONFIG.url,AF_CONFIG.key,{global:{fetch:timedFetch},auth:{flowType:(location.pathname==='/auth-callback.html'&&new URLSearchParams(location.search).get('mode')==='invite')?'implicit':'pkce',detectSessionInUrl:true,persistSession:true,autoRefreshToken:true}});
  let pending;
  async function current(){
   if(!client)throw Error('Account service could not load. Reload and try again.');

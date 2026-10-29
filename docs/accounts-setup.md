@@ -89,8 +89,9 @@ emails and leaves no test users or administrator memberships behind.
 
 Supabase's security advisor reports only three informational no-policy notices
 for private tables. These tables intentionally have no direct user grants and
-are inaccessible except through the checked functions. No warning/error
-security finding was returned. Email delivery is still an outstanding live test.
+are inaccessible except through the checked functions. A later advisor check also reports leaked-password protection disabled; enable
+that optional protection when supported by the project plan. Public email
+delivery is still an outstanding live test.
 
 The Supabase JS SDK is pinned at 2.118.0 and vendored locally with its MIT license.
 Run `npm ci` followed by `npm run vendor:auth` to reproduce vendor assets.
@@ -110,3 +111,13 @@ email confirmation remains enabled. Public registration remains disabled in the
 UI pending custom SMTP. `scripts/check-auth-invite.mjs` validates callback
 success, missing/unverified sessions, mismatch rejection and URL cleanup with
 mock data; it never handles the owner's real password or email token.
+
+## Signup availability and request states
+
+Public registration is still gated on custom email delivery. When unavailable,
+the signup form is hidden before visitors enter personal details, and a short
+unavailability message is displayed. Sign-in and existing-account recovery
+remain available. The waiting cursor is used only for an active request.
+Network fetches abort after 30 seconds; login form operations stop waiting after
+35 seconds, restore the controls, and display an actionable error. Account
+assets use a versioned URL so older paused-registration scripts are refreshed.
