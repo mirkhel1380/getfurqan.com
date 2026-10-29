@@ -1,21 +1,27 @@
 'use strict';
 const editions={
+  "english_saheeh": {
+    "label": "English — Saheeh International",
+    "lang": "en",
+    "dir": "ltr",
+    "version": "1.1.2"
+  },
   "dari_badkhashani": {
     "label": "دری — محمد انور بدخشانی",
     "lang": "prs",
     "dir": "rtl"
+  },
+  "pashto_rwwad": {
+    "label": "پښتو — Rowwad Translation Center",
+    "lang": "ps",
+    "dir": "rtl",
+    "version": "1.0.1"
   },
   "persian_ih": {
     "label": "فارسی — تیم ترجمهٔ اسلام‌هاوس",
     "lang": "fa",
     "dir": "rtl",
     "version": "1.1.3"
-  },
-  "english_saheeh": {
-    "label": "English — Saheeh International",
-    "lang": "en",
-    "dir": "ltr",
-    "version": "1.1.2"
   },
   "german_rwwad": {
     "label": "Deutsch — Rowwad Translation Center",
@@ -40,12 +46,6 @@ const editions={
     "lang": "it",
     "dir": "ltr",
     "resource": 153
-  },
-  "pashto_rwwad": {
-    "label": "پښتو — Rowwad Translation Center",
-    "lang": "ps",
-    "dir": "rtl",
-    "version": "1.0.1"
   },
   "urdu_junagarhi": {
     "label": "اردو — Muhammad Ibrahim Junagarhi",

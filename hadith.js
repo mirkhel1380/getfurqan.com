@@ -2,7 +2,7 @@ import {REVISION,localJSON,numberKey,searchable,bookName,hadithURL,sourceURL,rep
 const $=id=>document.getElementById(id),mode=document.body.dataset.hadithView,params=new URLSearchParams(location.search);
 const node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n};
 function status(el,text,error=false){if(!el)return;el.textContent=text;el.hidden=!text;el.classList.toggle('is-error',error)}
-function selectEditions(select,col,selected,includeNone=false){select.replaceChildren();if(includeNone)select.add(new Option('Arabic only','none'));for(const e of col.editions.filter(x=>x.language!=='Arabic'))select.add(new Option(e.language,e.name));select.value=[...select.options].some(x=>x.value===selected)?selected:'eng-'+col.id}
+function selectEditions(select,col,selected,includeNone=false){select.replaceChildren();const rank=language=>({English:0,Dari:1,Pashto:2}[language]??3);for(const e of col.editions.filter(x=>x.language!=='Arabic').sort((a,b)=>rank(a.language)-rank(b.language)))select.add(new Option(e.language,e.name));if(includeNone)select.add(new Option('Arabic only','none'));select.value=[...select.options].some(x=>x.value===selected)?selected:'eng-'+col.id}
 function safeEdition(col,value){return col.editions.find(x=>x.name===value)||col.editions.find(x=>x.name==='eng-'+col.id)}
 function errorPage(err){status($('hadith-status'),err.message||'This reference is unavailable.',true);if($('hadith-retry'))$('hadith-retry').hidden=false}
 if(mode==='collection'){
