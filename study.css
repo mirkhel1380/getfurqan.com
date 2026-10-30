@@ -3,3 +3,17 @@
 .quran-quote{font-family:UthmanicHafs,serif;font-size:1.15em}
 
 .publisher-card{background:#fffefa;border:1px solid #dfe5d8;border-radius:18px;padding:30px;margin:22px 0}.publisher-card h3{font:30px/1.25 Georgia,serif;margin:15px 0}.publisher-card p{max-width:780px;color:#5e705f;font-size:14px}.publisher-card .button{display:inline-flex;height:auto;margin:15px 0;padding:13px 20px}.publisher-card .source-detail{font-size:12px}.current-passage{font-weight:600}.availability-note{background:#f4ecd9;border-radius:10px;padding:14px}.collection-link{display:block;font-size:13px;margin:12px 0}.publisher-index{border-top:1px solid #dfe5d8;margin-top:20px;padding-top:18px}.publisher-index summary{cursor:pointer;font-size:13px;font-weight:650}.source-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;font-size:13px}.block-text p{margin:.5em 0}.block-text h1,.block-text h2{font-size:1.2em;letter-spacing:0}@media(max-width:650px){.source-list{grid-template-columns:1fr}.publisher-card{padding:22px}.publisher-card h3{font-size:26px}}
+
+/* One selected Arabic verse beside its published explanation. */
+.study-comparison{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;direction:ltr;align-items:start;margin-top:25px}
+.study-comparison>.verse-panel{grid-column:2;grid-row:1;min-width:0;margin:0;position:sticky;top:24px;max-height:calc(100dvh - 48px);overflow:auto}
+.study-comparison>.study-meaning{grid-column:1;grid-row:1;min-width:0}
+html[dir=rtl] .study-comparison>.verse-panel,html[dir=rtl] .study-meaning{direction:rtl}
+html:not([dir=rtl]) .study-comparison>.verse-panel,html:not([dir=rtl]) .study-meaning{direction:ltr}
+.study-comparison .verse-heading{flex-wrap:wrap;gap:12px}
+.study-comparison .verse-nav{flex-wrap:wrap;gap:10px}
+.study-comparison .panel-top{flex-wrap:wrap;gap:18px}
+.study-comparison .panel-top label{max-width:100%;min-width:0}
+.study-comparison .panel-top select{width:100%;max-width:100%;min-width:0}
+@media(max-width:900px){.study-comparison{grid-template-columns:minmax(0,1fr);gap:24px}.study-comparison>.verse-panel{grid-column:1;grid-row:1;position:static;max-height:none;overflow:visible}.study-comparison>.study-meaning{grid-column:1;grid-row:2}}
+html[data-theme=dark] .study-comparison .block-meta{background:var(--soft);color:var(--ink);border-bottom:1px solid var(--line)}
