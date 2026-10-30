@@ -1,33 +1,155 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "privacy": {
     "title": "Privacy Policy",
     "lead": "How Al Furqan handles your information, account and browser data.",
     "sections": [
-      {"id":"operator","title":"Who we are","paragraphs":["Al Furqan operates getfurqan.online. This policy explains how this website uses information. You can read without an account. Contact us about privacy or your information using the email below."]},
-      {"id":"accounts","title":"Accounts & contact messages","paragraphs":["For an account, we collect your name, email, account status and authentication records through Supabase. The administrator can view account details and manage access. Passwords are handled by the authentication service and are not visible in the admin panel.","The contact form stores your name, email, subject, message, website language, submission time and message reference. An authorized administrator uses these to answer and manage your enquiry. It does not subscribe you to marketing emails. Do not send passwords or sensitive documents."]},
-      {"id":"browser","title":"Reading data & browser storage","paragraphs":["Bookmarks, reading progress, study notes, personal reflections, remembrance counters and preferences are stored in your browser. Signing in does not sync them to your account or another device. Language, theme, sign-in sessions and prayer location settings also use browser storage; the prayer calendar cache is reused for up to 24 hours.","You can delete notes with their controls or clear website data in your browser. Clearing data may remove saved reading information and sign you out. On a shared browser profile, other people may see your local notes. This website currently has no advertising trackers and does not sell personal information."]},
-      {"id":"views","title":"Weekly ayah view counts","paragraphs":["When the weekly ayah is visible, we send its reference and a random browser token to count one visit per verse per day. The view-count table stores no email, account ID or IP address. Tokens older than 30 days are cleared when later visits are counted; aggregate totals remain. Hosting services may still receive connection data."]},
-      {"id":"providers","title":"Service providers & international processing","paragraphs":["GitHub Pages hosts the public website. Supabase supports accounts, contact messages and view counts; email services deliver account messages. Quran.Foundation, QuranEnc, the Hadith API dataset and its delivery services supply texts, fonts or audio. AlAdhan receives the city, country and calculation settings you select for prayer times; we do not request GPS location.","When a feature contacts a provider, that provider can receive your IP address, browser details and requested content. Providers may process information in other countries under their own policies. Authorized administrators and necessary service providers can access relevant records; disclosure may also be required by law. Contact us for information about applicable transfer safeguards."]},
-      {"id":"purposes","title":"Why we use information","paragraphs":["We use information to provide requested features, authenticate accounts, answer enquiries, keep the service secure and prevent abuse. Where data protection law requires a legal basis, these purposes rely on providing the service you request and our legitimate interests in operating and securing it; we seek consent where required. We do not use your reading activity to make automated decisions with legal or similarly significant effects."]},
-      {"id":"retention","title":"Retention & security","paragraphs":["Account information remains while the account exists. Contact messages and administrative access records currently have no automatic expiry. We retain them for handling enquiries, follow-up and security, and you may request deletion. Limited records may need to remain for legal obligations or unresolved security issues; provider backups and logs follow their own retention arrangements.","We use access controls to restrict protected records. No online service or browser storage can guarantee complete security. Keep your password private, sign out on shared devices and keep copies of notes you want to preserve."]},
-      {"id":"rights","title":"Your choices & privacy rights","paragraphs":["You can update your profile name in your account. Email us to request access, correction, deletion or a copy of your server-held information, or to raise a concern. Depending on applicable law, you may also request restriction, object to processing, withdraw consent where used, or complain to your local data protection authority. We may need to verify your identity before acting. Local browser notes cannot be retrieved by the administrator."]},
-      {"id":"children","title":"Younger visitors","paragraphs":["Reading is open without registration. Younger visitors should involve a parent or guardian before creating an account or sending personal information where local law requires it. If a child supplied information without required permission, contact us to request its removal."]},
-      {"id":"updates","title":"Policy updates","paragraphs":["We update this page when our practices change and show the revision date above. Material changes will be brought to your attention where required. Privacy questions and requests can be sent to the address below."]}
+      {
+        "id": "operator",
+        "title": "Who we are",
+        "paragraphs": [
+          "Al Furqan operates getfurqan.online. This policy explains how this website uses information. You can read without an account. Contact us about privacy or your information using the email below."
+        ]
+      },
+      {
+        "id": "accounts",
+        "title": "Accounts & contact messages",
+        "paragraphs": [
+          "For an account, we collect your name, email, account status and authentication records through Supabase. The administrator can view account details and manage access. Passwords are handled by the authentication service and are not visible in the admin panel.",
+          "The contact form stores your name, email, subject, message, website language, submission time and message reference. An authorized administrator uses these to answer and manage your enquiry. It does not subscribe you to marketing emails. Do not send passwords or sensitive documents."
+        ]
+      },
+      {
+        "id": "browser",
+        "title": "Reading data & browser storage",
+        "paragraphs": [
+          "Guest bookmarks, reading history, notes and reflections stay in your browser. After signing in, account reading data is stored separately on this device. Choosing Enable private sync gives permission to store your saved verses, reading place, daily goal, reading history, study notes and weekly reflections with Supabase and sync them across your signed-in devices. Guest data is imported only when you choose it. Language, theme, remembrance counters and prayer settings remain browser preferences; the prayer calendar cache is reused for up to 24 hours.",
+          "You can delete notes with their controls; when private sync is enabled, deletions reach your account when a sync succeeds. Clearing website data removes local copies and unsynced edits and may sign you out, but does not delete information already held in your account. Contact us to request server-held data deletion. Other people using the same browser profile may access local data. This website has no advertising trackers and does not sell personal information."
+        ]
+      },
+      {
+        "id": "views",
+        "title": "Weekly ayah view counts",
+        "paragraphs": [
+          "When the weekly ayah is visible, we send its reference and a random browser token to count one visit per verse per day. The view-count table stores no email, account ID or IP address. Tokens older than 30 days are cleared when later visits are counted; aggregate totals remain. Hosting services may still receive connection data."
+        ]
+      },
+      {
+        "id": "voice",
+        "title": "Voice search",
+        "paragraphs": [
+          "Voice search starts only when you press its button and allow microphone access. Your browser may send audio to its own speech-recognition service under that service’s privacy practices. Al Furqan does not record or store raw microphone audio. Recognized text fills the search box for you to review; it is sent for a Quran search only when you submit it. Arabic and English voice input depend on browser support."
+        ]
+      },
+      {
+        "id": "providers",
+        "title": "Service providers & international processing",
+        "paragraphs": [
+          "GitHub Pages hosts the public website. Supabase supports accounts, contact messages and view counts; email services deliver account messages. Quran.Foundation, QuranEnc, the Hadith API dataset and its delivery services supply texts, fonts or audio. AlAdhan receives the city, country and calculation settings you select for prayer times; we do not request GPS location.",
+          "When a feature contacts a provider, that provider can receive your IP address, browser details and requested content. Providers may process information in other countries under their own policies. Authorized administrators and necessary service providers can access relevant records; disclosure may also be required by law. Contact us for information about applicable transfer safeguards."
+        ]
+      },
+      {
+        "id": "purposes",
+        "title": "Why we use information",
+        "paragraphs": [
+          "We use information to provide requested features, authenticate accounts, answer enquiries, keep the service secure and prevent abuse. Where data protection law requires a legal basis, these purposes rely on providing the service you request and our legitimate interests in operating and securing it; we seek consent where required. We do not use your reading activity to make automated decisions with legal or similarly significant effects."
+        ]
+      },
+      {
+        "id": "retention",
+        "title": "Retention & security",
+        "paragraphs": [
+          "Account information remains while the account exists. Contact messages and administrative access records currently have no automatic expiry. We retain them for handling enquiries, follow-up and security, and you may request deletion. Limited records may need to remain for legal obligations or unresolved security issues; provider backups and logs follow their own retention arrangements.",
+          "We use access controls to restrict protected records. No online service or browser storage can guarantee complete security. Keep your password private, sign out on shared devices and keep copies of notes you want to preserve."
+        ]
+      },
+      {
+        "id": "rights",
+        "title": "Your choices & privacy rights",
+        "paragraphs": [
+          "You can update your profile name in your account. Email us to request access, correction, deletion or a copy of your server-held information, or to raise a concern. Depending on applicable law, you may also request restriction, object to processing, withdraw consent where used, or complain to your local data protection authority. We may need to verify your identity before acting. Local browser notes cannot be retrieved by the administrator."
+        ]
+      },
+      {
+        "id": "children",
+        "title": "Younger visitors",
+        "paragraphs": [
+          "Reading is open without registration. Younger visitors should involve a parent or guardian before creating an account or sending personal information where local law requires it. If a child supplied information without required permission, contact us to request its removal."
+        ]
+      },
+      {
+        "id": "updates",
+        "title": "Policy updates",
+        "paragraphs": [
+          "We update this page when our practices change and show the revision date above. Material changes will be brought to your attention where required. Privacy questions and requests can be sent to the address below."
+        ]
+      }
     ]
   },
   "terms": {
     "title": "Terms & Conditions",
     "lead": "The conditions for using Al Furqan and its reading and study tools.",
     "sections": [
-      {"id":"service","title":"Using Al Furqan","paragraphs":["These terms apply to getfurqan.online, operated as Al Furqan. Use the website lawfully and respectfully. Quran reading does not require an account. If you do not agree with these terms, stop using the service. Younger visitors should obtain parental or guardian permission where required by local law."]},
-      {"id":"learning","title":"Religious content & careful study","paragraphs":["Translations convey an understanding of the meanings and do not replace the Arabic Quran. Tafsir, hadith editions and grades must be read with their references and context. Editorial topics and personal notes are separate from published scripture and scholarly commentary. This website is a study aid, not a certified Mushaf or a personal religious ruling; consult a qualified scholar for individual questions.","We aim to display published texts accurately, but errors, missing entries and differences between editions can occur. Report suspected issues with the verse or hadith reference and edition name. Do not change or redistribute source text in a way that misrepresents its meaning or attribution."]},
-      {"id":"prayer","title":"Prayer times & personal records","paragraphs":["Prayer times are calculated estimates based on your selected location and method, not a mosque congregation or Friday prayer timetable. Check the settings and local mosque guidance, especially at high latitudes. Hijri dates may differ from local moon sighting. Keep your own copies of notes and saved information; browser data may be lost and does not sync between devices."]},
-      {"id":"account","title":"Your account & acceptable use","paragraphs":["Provide accurate account information, protect your password and use only accounts you are authorized to access. Do not impersonate others, send spam or harmful content, attack the service, bypass access controls, collect other users’ information or overload content providers. You are responsible for content you submit and should have permission to share it.","The administrator may suspend protected account access to address misuse or security concerns. Contact us if you believe a restriction is mistaken or want to request account deletion. Public reading remains available without signing in."]},
-      {"id":"rights","title":"Content rights & external services","paragraphs":["Quran text presentations, translations, commentary, recitations, datasets and fonts may have separate owners and licences. Access through Al Furqan does not grant unrestricted reuse rights. Preserve source attribution and follow the relevant source licence before copying or redistributing content. You retain rights to your own notes and messages; submitting a message allows us to handle your enquiry.","Content services and external links have their own terms and privacy practices. We do not control their availability or endorse everything on linked websites. Do not bypass their restrictions."]},
-      {"id":"availability","title":"Availability & responsibility","paragraphs":["Features may change, be interrupted or become unavailable. We cannot guarantee uninterrupted access, complete datasets or error-free displays. To the extent allowed by applicable law, the service is provided as available. Nothing in these terms excludes liability or consumer rights that the law does not allow us to exclude."]},
-      {"id":"privacy","title":"Privacy & changes to these terms","paragraphs":["Our Privacy Policy explains account information, messages, browser storage and service providers. These terms do not replace that policy or make privacy rights depend on acceptance. Updated terms will appear here with a revision date; material changes will be notified where required and will not remove rights already provided by law."]},
-      {"id":"contact","title":"Questions & concerns","paragraphs":["Contact Al Furqan using the email below for questions, text corrections, account concerns or disputes. We will review the issue and seek a reasonable resolution. Applicable mandatory law and your right to use competent courts or authorities remain unaffected."]}
+      {
+        "id": "service",
+        "title": "Using Al Furqan",
+        "paragraphs": [
+          "These terms apply to getfurqan.online, operated as Al Furqan. Use the website lawfully and respectfully. Quran reading does not require an account. If you do not agree with these terms, stop using the service. Younger visitors should obtain parental or guardian permission where required by local law."
+        ]
+      },
+      {
+        "id": "learning",
+        "title": "Religious content & careful study",
+        "paragraphs": [
+          "Translations convey an understanding of the meanings and do not replace the Arabic Quran. Tafsir, hadith editions and grades must be read with their references and context. Editorial topics and personal notes are separate from published scripture and scholarly commentary. This website is a study aid, not a certified Mushaf or a personal religious ruling; consult a qualified scholar for individual questions.",
+          "We aim to display published texts accurately, but errors, missing entries and differences between editions can occur. Report suspected issues with the verse or hadith reference and edition name. Do not change or redistribute source text in a way that misrepresents its meaning or attribution."
+        ]
+      },
+      {
+        "id": "prayer",
+        "title": "Prayer times & personal records",
+        "paragraphs": [
+          "Prayer times are calculated estimates based on your selected location and method, not a mosque congregation or Friday prayer timetable. Check the settings and local mosque guidance, especially at high latitudes. Hijri dates may differ from local moon sighting. Keep your own copies of notes and saved information; browser-only data may be lost, while optional private account sync requires a successful connection."
+        ]
+      },
+      {
+        "id": "account",
+        "title": "Your account & acceptable use",
+        "paragraphs": [
+          "Provide accurate account information, protect your password and use only accounts you are authorized to access. Do not impersonate others, send spam or harmful content, attack the service, bypass access controls, collect other users’ information or overload content providers. You are responsible for content you submit and should have permission to share it.",
+          "The administrator may suspend protected account access to address misuse or security concerns. Contact us if you believe a restriction is mistaken or want to request account deletion. Public reading remains available without signing in."
+        ]
+      },
+      {
+        "id": "rights",
+        "title": "Content rights & external services",
+        "paragraphs": [
+          "Quran text presentations, translations, commentary, recitations, datasets and fonts may have separate owners and licences. Access through Al Furqan does not grant unrestricted reuse rights. Preserve source attribution and follow the relevant source licence before copying or redistributing content. You retain rights to your own notes and messages; submitting a message allows us to handle your enquiry.",
+          "Content services and external links have their own terms and privacy practices. We do not control their availability or endorse everything on linked websites. Do not bypass their restrictions."
+        ]
+      },
+      {
+        "id": "availability",
+        "title": "Availability & responsibility",
+        "paragraphs": [
+          "Features may change, be interrupted or become unavailable. We cannot guarantee uninterrupted access, complete datasets or error-free displays. To the extent allowed by applicable law, the service is provided as available. Nothing in these terms excludes liability or consumer rights that the law does not allow us to exclude."
+        ]
+      },
+      {
+        "id": "privacy",
+        "title": "Privacy & changes to these terms",
+        "paragraphs": [
+          "Our Privacy Policy explains account information, messages, browser storage and service providers. These terms do not replace that policy or make privacy rights depend on acceptance. Updated terms will appear here with a revision date; material changes will be notified where required and will not remove rights already provided by law."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Questions & concerns",
+        "paragraphs": [
+          "Contact Al Furqan using the email below for questions, text corrections, account concerns or disputes. We will review the issue and seek a reasonable resolution. Applicable mandatory law and your right to use competent courts or authorities remain unaffected."
+        ]
+      }
     ]
   }
 }

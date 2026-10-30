@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const modulePath=process.env.PGLITE_MODULE;
+if(!modulePath)throw Error('Set PGLITE_MODULE to the installed @electric-sql/pglite entry point. This test uses an isolated in-memory database only.');
+const {PGlite}=await import(modulePath);const db=new PGlite();
+await db.exec(`create role anon;create role authenticated;create schema auth;
+create table auth.users(id uuid primary key,email text,email_confirmed_at timestamptz,raw_user_meta_data jsonb,banned_until timestamptz,last_sign_in_at timestamptz);
+create table auth.sessions(id uuid primary key,user_id uuid references auth.users(id),not_after timestamptz);
+create function auth.jwt() returns jsonb language sql stable as $$select coalesce(nullif(current_setting('request.jwt.claims',true),''),'{}')::jsonb$$;
+create function auth.uid() returns uuid language sql stable as $$select nullif(auth.jwt()->>'sub','')::uuid$$;
+grant usage on schema auth to authenticated;`);
+await db.exec(fs.readFileSync('backend/schema.sql','utf8'));
+await db.exec(fs.readFileSync('backend/reading-sync.sql','utf8'));
+const result=await db.exec(fs.readFileSync('backend/reading-security-check.sql','utf8'));
+assert(result.some(r=>r.rows?.some(x=>String(x.reading_checks).startsWith('PASS:'))));
+const users=await db.query('select count(*)::int as count from auth.users');assert.equal(users.rows[0].count,0);
+await db.close();console.log('PASS: isolated PostgreSQL writes, isolation, live-session gates, CAS conflicts, tombstones, atomic rollback and clean test cleanup. Production auth records were not modified.');

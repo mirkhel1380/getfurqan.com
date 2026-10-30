@@ -1,0 +1,26 @@
+# Homepage reading tools and private account sync
+
+The homepage now has a direct Quran search form, Arabic/English voice input, a real saved-place card, a My Quran shortcut, saved-verse count, an editable daily reading goal and six curated passage shortcuts. The full surah list remains in the reader. Popular passages are explicitly curated, not claimed to be measured popularity rankings. The goal counts only deliberate reading checkmarks. The empty resume card does not invent a saved reading position.
+
+Voice input is user-initiated and fills the search box for review; it never generates Quran text or submits automatically. It is also offered on the search page. The browser must support SpeechRecognition and a secure context. Unsupported browsers, HTTP preview, permission refusal, start failures, missing speech, network errors and timeouts leave typed search usable. Raw microphone audio is not recorded or stored by Al Furqan; browser speech services may process audio. The policy and inline disclosure explain this. No microphone request was made in browser QA. The supported and failure paths were tested with a controlled recognition implementation.
+
+`reading-core.js` maps existing bookmarks, progress/goal/resume, study notes and weekly reflections to individual records. `reading-data.js` keeps guest storage separate from each verified account's browser cache. Existing guest records are not uploaded silently. Explicit import fills only absent account records and retains existing values and deletion markers. Sync is opt-in, with pause, retry and conflict review controls in Reading progress and My account. Preferences, prayer locations and remembrance counters remain browser-local. Clearing browser data can discard pending changes and does not delete already-synced cloud records.
+
+Supabase project: Al Furqan (`xtkdiziasltmgwqqnkfn`). The two production migrations were `private_reading_sync` and `reading_sync_validation`. No Affimaro project was accessed. Private `af_reading.settings` and `af_reading.items` have RLS and no direct anon/authenticated table grants. Public wrappers are SECURITY INVOKER; private implementation functions use the existing verified, active, live-session gate and derive the owner from it. No client user ID is accepted; no admin reading-content endpoint exists. Functions use an empty search path. Revisions provide compare-and-set updates, same-value retries are idempotent and null tombstones prevent stale devices resurrecting deleted notes. Conflicts retain local edits for explicit review. Batches and per-account storage are bounded. Account deletion cascades reading records.
+
+Production checks were read-only: valid/invalid data validation, table grants, RPC grants and security advisors. The advisor reports eight INFO findings for intentionally inaccessible private tables without policies; the pre-existing leaked-password-protection warning remains unchanged. A production synthetic-auth test was rejected by automatic review over cleanup risk; it was not retried. The safe alternative ran the same SQL and client integration against an isolated in-memory PostgreSQL instance with synthetic auth tables and users. Local test cleanup was verified. Production user/session/admin records were not modified by testing.
+
+Verification completed:
+- `check-reading-sync-local.mjs`: isolated PostgreSQL opt-in, user isolation, administrator isolation, verified/live/suspended/revoked session gates, paused writes, atomic validation, CAS conflicts, retries and deletion safety; no remaining synthetic users after rollback.
+- `check-reading-client.mjs`: actual client code against isolated PostgreSQL RPC implementations; explicit import, two devices, independent records, conflicts, deletion protection, goal/history/resume, offline retry, pause, logout separation and newer edits during acknowledgement of an older request.
+- `check-voice-search.mjs`: no automatic listening, language selection, text-only results, review before submit, errors and timeout cleanup.
+- Existing global language, theme, complete-topic, weekly action and signup/resend checks.
+- Browser: homepage goal saves and updates its meter, Popular expands valid internal links, direct search navigates with an encoded verse reference, My Quran opens reading progress, and the anonymous sync panel shows sign-in rather than account controls. Full new interface and privacy notices localize to Dari; catalogs include all 13 languages (839 messages each). Source corpus data and published translations remain unchanged.
+
+Test runtime is an isolated scratch installation of `@electric-sql/pglite@0.5.13`. To reproduce the PostgreSQL tests, set `PGLITE_MODULE` to that package's `dist/index.js`; no test database or runtime files are shipped in `dist/`. Website dependencies are unchanged. Updated privacy/terms revision: 30 October 2026. Shared assets use `20261030-reading1`.
+
+References reviewed:
+- https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
+- https://supabase.com/docs/guides/database/postgres/row-level-security
+- https://supabase.com/changelog.md (including the upcoming legacy TLS-cipher retirement; no API-signature changes needed here)
+- https://pglite.dev/docs/
