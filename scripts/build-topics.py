@@ -35,3 +35,7 @@ section=f'''<section class="home-topics" id="islamic-topics" aria-labelledby="ho
 if 'id="islamic-topics"' not in home:home=home.replace('    <section class="about"',section+'\n    <section class="about"')
 if '/topics.css' not in home:home=home.replace('<link rel="stylesheet" href="/theme.css?v=20261029-theme1"></head>','<link rel="stylesheet" href="/topics.css"><script type="module" src="/weekly.js"></script><link rel="stylesheet" href="/theme.css?v=20261029-theme1"></head>')
 (r/'index.html').write_text(home)
+
+# Retain shared page headers after regenerating content.
+import runpy
+runpy.run_path('scripts/build-page-headers.py')

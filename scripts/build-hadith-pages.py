@@ -33,3 +33,7 @@ home=(r/'index.html').read_text();feature=f'''<section class="home-hadith" id="h
 if 'id="hadith-library"' not in home:home=home.replace('    <section class="about"',feature+'\n    <section class="about"')
 if '/hadith.css' not in home:home=home.replace('<link rel="stylesheet" href="/theme.css?v=20261029-theme1"></head>','<link rel="stylesheet" href="/hadith.css"><link rel="stylesheet" href="/theme.css?v=20261029-theme1"></head>')
 (r/'index.html').write_text(home)
+
+# Retain shared page headers after regenerating content.
+import runpy
+runpy.run_path('scripts/build-page-headers.py')

@@ -23,3 +23,7 @@ for key in ['privacy','terms']:
     h=re.sub(r'<meta name="description" content="[^"]*">','<meta name="description" content="'+e(page['lead'])+'">',h)
     h=h.replace('</head>','<link rel="canonical" href="https://getfurqan.online/'+key+'.html"></head>')
     (r/(key+'.html')).write_text(h+'<body id="top">'+header+body+footer+'</body></html>')
+
+# Retain shared page headers after regenerating content.
+import runpy
+runpy.run_path('scripts/build-page-headers.py')
