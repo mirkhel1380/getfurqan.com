@@ -1220,5 +1220,8 @@
   "Goal reached": "موخه بشپړه شوه",
   "Complete source verse · {ref}": "د سرچینې بشپړ آیت · {ref}",
   "Translator note {n}": "د ژباړونکي یادښت {n}",
-  "Arabic · Quran.Foundation": "عربي · Quran.Foundation"
+  "Arabic · Quran.Foundation": "عربي · Quran.Foundation",
+  "Page not found": "پاڼه ونه موندل شوه",
+  "This link may have changed. Choose a section below to continue.": "ښايي دا لینک بدل شوی وي. د دوام لپاره له لاندې برخو یوه وټاکئ.",
+  "Report a broken link": "د خراب لینک راپور ورکړئ"
 }

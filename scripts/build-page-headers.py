@@ -5,6 +5,7 @@ from html import escape
 
 root=Path('dist')
 pages={
+ '404':('404','not-found-heading'),
  'about':('About Al Furqan','about-hero'),
  'translations':('Translations','intro'),
  'listen':('Listen & recite','intro'),
@@ -55,3 +56,7 @@ for p in root.rglob('*.html'):
   crumb='<nav class="af-page-breadcrumb af-page-breadcrumb-wide" data-page-breadcrumb aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">'+escape(label)+'</span></nav>'
   s=s.replace('</dialog>','</dialog>'+crumb,1)
  p.write_text(s)
+
+# Keep discovery metadata and the error page current after content regeneration.
+import runpy
+runpy.run_path('scripts/build-seo.py')

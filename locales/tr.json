@@ -1220,5 +1220,8 @@
   "Goal reached": "Hedefe ulaşıldı",
   "Complete source verse · {ref}": "Tam kaynak ayet · {ref}",
   "Translator note {n}": "Çevirmen notu {n}",
-  "Arabic · Quran.Foundation": "Arapça · Quran.Foundation"
+  "Arabic · Quran.Foundation": "Arapça · Quran.Foundation",
+  "Page not found": "Sayfa bulunamadı",
+  "This link may have changed. Choose a section below to continue.": "Bu bağlantı değişmiş olabilir. Devam etmek için aşağıdan bir bölüm seçin.",
+  "Report a broken link": "Bozuk bağlantıyı bildir"
 }
